@@ -23,7 +23,8 @@ public class Consola {
 		
 		int opt = -1;
 		while(opt!=0){
-			
+
+			// TODO switch-ul asta trebuia sa fia mai jos, mai mult estetic, da nah, daca ii aci bullshit-u asta te puno sa te gandesti ce ma-sa vrea
 			switch(opt){
 				case 1:
 					adauga();
@@ -71,7 +72,7 @@ public class Consola {
 			do{
 				System.out.println("An aparitie:");
 				line=console.readLine();
-			}while(!line.matches("[10-9]+"));
+			}while(!line.matches("[10-9]+")); // TODO cum adica 10-9 ??
 			c.setAnAparitie(line);
 			
 			do{

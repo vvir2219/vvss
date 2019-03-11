@@ -30,7 +30,7 @@ public class BibliotecaCtrl {
 
 	public List<Carte> cautaCarte(String autor) throws Exception{
 		Validator.isStringOK(autor);
-		return cr.cautaCarte(autor);
+		return cr.cautaCarte(autor); // TODO sa ne amintim cu frica ca ca ca ca cauta carte numa cautare dupa autor nu face
 	}
 	
 	public List<Carte> getCarti() throws Exception{

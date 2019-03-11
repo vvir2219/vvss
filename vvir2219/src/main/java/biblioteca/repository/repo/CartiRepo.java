@@ -72,7 +72,7 @@ public class CartiRepo implements CartiRepoInterface {
 		List<Carte> carti = getCarti();
 		List<Carte> cartiGasite = new ArrayList<Carte>();
 		int i=0;
-		while (i<=carti.size()){
+		while (i<=carti.size()){ // TODO <
 			boolean flag = false;
 			List<String> lref = carti.get(i).getCuvinteCheie();
 			int j = 0;

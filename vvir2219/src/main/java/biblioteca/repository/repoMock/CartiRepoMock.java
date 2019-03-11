@@ -32,10 +32,11 @@ public class CartiRepoMock implements CartiRepoInterface {
 	
 	@Override
 	public List<Carte> cautaCarte(String ref) {
+		// TODO dafuk is with this, like really, nu se cere nicaria, ce ma-sa is cu referintele alea??
 		List<Carte> carti = getCarti();
 		List<Carte> cartiGasite = new ArrayList<Carte>();
 		int i=0;
-		while (i<=carti.size()){
+		while (i<=carti.size()){ // TODO i < size
 			boolean flag = false;
 			List<String> lref = carti.get(i).getCuvinteCheie();
 			int j = 0;
@@ -76,7 +77,7 @@ public class CartiRepoMock implements CartiRepoInterface {
 		List<Carte> lc = getCarti();
 		List<Carte> lca = new ArrayList<Carte>();
 		for(Carte c:lc){
-			if(c.getAnAparitie().equals(an) == false){
+			if(c.getAnAparitie().equals(an) == false){ // TODO ii gresita treaba asta
 				lca.add(c);
 			}
 		}
@@ -86,7 +87,7 @@ public class CartiRepoMock implements CartiRepoInterface {
 			@Override
 			public int compare(Carte a, Carte b) {
 				if(a.getTitlu().compareTo(b.getTitlu())==0){
-					return a.getReferenti().get(0).compareTo(b.getReferenti().get(0));
+					return a.getReferenti().get(0).compareTo(b.getReferenti().get(0)); // TODO iara referentii lu' peste?
 				}
 				
 				return a.getTitlu().compareTo(b.getTitlu());
