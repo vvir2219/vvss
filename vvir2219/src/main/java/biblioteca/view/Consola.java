@@ -23,23 +23,6 @@ public class Consola {
 		
 		int opt = -1;
 		while(opt!=0){
-
-			// TODO switch-ul asta trebuia sa fia mai jos, mai mult estetic, da nah, daca ii aci bullshit-u asta te puno sa te gandesti ce ma-sa vrea
-			switch(opt){
-				case 1:
-					adauga();
-					break;
-				case 2:
-					cautaCartiDupaAutor();
-					break;
-				case 3:
-					afiseazaCartiOrdonateDinAnul();
-					break;
-				case 4:
-					afiseazaToateCartile();
-					break;
-			}
-		
 			printMenu();
 			String line;
 			do{
@@ -47,6 +30,21 @@ public class Consola {
 				line=console.readLine();
 			}while(!line.matches("[0-4]"));
 			opt=Integer.parseInt(line);
+
+            switch(opt){
+                case 1:
+                    adauga();
+                    break;
+                case 2:
+                    cautaCartiDupaAutor();
+                    break;
+                case 3:
+                    afiseazaCartiOrdonateDinAnul();
+                    break;
+                case 4:
+                    afiseazaToateCartile();
+                    break;
+            }
 		}
 	}
 	
@@ -72,7 +70,7 @@ public class Consola {
 			do{
 				System.out.println("An aparitie:");
 				line=console.readLine();
-			}while(!line.matches("[10-9]+")); // TODO cum adica 10-9 ?? era destul 0-9
+			}while(!line.matches("1[0-9]+"));
 			c.setAnAparitie(line);
 			
 			do{
@@ -137,7 +135,7 @@ public class Consola {
 			do{
 				System.out.println("An aparitie:");
 				line=console.readLine();
-			}while(!line.matches("[10-9]+"));
+			}while(!line.matches("1[0-9]+"));
 			for(Carte c:bc.getCartiOrdonateDinAnul(line)){
 				System.out.println(c);
 			}

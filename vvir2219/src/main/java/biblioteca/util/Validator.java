@@ -13,10 +13,10 @@ public class Validator {
 	}
 	
 	public static void validateCarte(Carte c)throws Exception{
-		if(c.getCuvinteCheie()==null){ // TODO vazut ca lista nu cumva chiar ii vida
+		if(c.getCuvinteCheie().size() == 0){
 			throw new Exception("Lista cuvinte cheie vida!");
 		}
-		if(c.getReferenti()==null){// TODO vazut ca lista nu cumva chiar ii vida
+		if(c.getReferenti().size() ==  0){
 			throw new Exception("Lista autori vida!");
 		}
 		if(!isOKString(c.getTitlu()))

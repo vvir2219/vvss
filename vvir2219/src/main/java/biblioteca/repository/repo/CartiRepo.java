@@ -72,9 +72,9 @@ public class CartiRepo implements CartiRepoInterface {
 		List<Carte> carti = getCarti();
 		List<Carte> cartiGasite = new ArrayList<Carte>();
 		int i=0;
-		while (i<=carti.size()){ // TODO <
+		while (i<carti.size()){
 			boolean flag = false;
-			List<String> lref = carti.get(i).getCuvinteCheie();
+			List<String> lref = carti.get(i).getReferenti();
 			int j = 0;
 			while(j<lref.size()){
 				if(lref.get(j).toLowerCase().contains(ref.toLowerCase())){
