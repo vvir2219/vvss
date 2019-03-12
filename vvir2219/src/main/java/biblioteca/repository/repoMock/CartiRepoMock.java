@@ -32,7 +32,7 @@ public class CartiRepoMock implements CartiRepoInterface {
 	
 	@Override
 	public List<Carte> cautaCarte(String ref) {
-		// TODO dafuk is with this, like really, nu se cere nicaria, ce ma-sa is cu referintele alea??
+		// TODO de ce autorii se numesc referenti?
 		List<Carte> carti = getCarti();
 		List<Carte> cartiGasite = new ArrayList<Carte>();
 		int i=0;

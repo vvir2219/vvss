@@ -19,19 +19,16 @@ public class Validator {
 		if(c.getReferenti()==null){// TODO vazut ca lista nu cumva chiar ii vida
 			throw new Exception("Lista autori vida!");
 		}
-		// TODO nu ii verificat de null
 		if(!isOKString(c.getTitlu()))
 			throw new Exception("Titlu invalid!");
-		// TODO nu ii verificat de null
 		for(String s:c.getReferenti()){
 			if(!isOKString(s))
 				throw new Exception("Autor invalid!");
 		}
-		for(String s:c.getCuvinteCheie()){ // TODO aaam, crapa daca getCuvinteCheie returneaza null
+		for(String s:c.getCuvinteCheie()){
 			if(!isOKString(s))
 				throw new Exception("Cuvant cheie invalid!");
 		}
-		// TODO nu ii verificat de null
 		if(!Validator.isNumber(c.getAnAparitie()))
 			throw new Exception("Editura invalid!"); // ps. misto an 00000000000
 	}
