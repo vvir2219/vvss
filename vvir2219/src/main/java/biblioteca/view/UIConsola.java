@@ -8,12 +8,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Consola {
+public class UIConsola {
 
 	private BufferedReader console;
 	BibliotecaCtrl bc;
 	
-	public Consola(BibliotecaCtrl bc){
+	public UIConsola(BibliotecaCtrl bc){
 		this.bc=bc;
 	}
 	

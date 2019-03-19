@@ -5,6 +5,9 @@ import biblioteca.model.Carte;
 import biblioteca.repository.repoInterfaces.CartiRepoInterface;
 import biblioteca.util.Validator;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class BibliotecaCtrl {
@@ -19,18 +22,29 @@ public class BibliotecaCtrl {
 		Validator.validateCarte(c);
 		cr.adaugaCarte(c);
 	}
-	
-	public void modificaCarte(Carte nou, Carte vechi) throws Exception{
-		cr.modificaCarte(nou, vechi);
-	}
-	
-	public void stergeCarte(Carte c) throws Exception{
-		cr.stergeCarte(c);
-	}
 
 	public List<Carte> cautaCarte(String autor) throws Exception{
 		Validator.isStringOK(autor);
-		return cr.cautaCarte(autor);
+		List<Carte> carti = cr.getCarti();
+		List<Carte> cartiGasite = new ArrayList<Carte>();
+		int i=0;
+		while (i<carti.size()){
+			boolean flag = false;
+			List<String> lref = carti.get(i).getAutori();
+			int j = 0;
+			while(j<lref.size()){
+				if(lref.get(j).toLowerCase().contains(autor.toLowerCase())){
+					flag = true;
+					break;
+				}
+				j++;
+			}
+			if(flag == true){
+				cartiGasite.add(carti.get(i));
+			}
+			i++;
+		}
+		return cartiGasite;
 	}
 	
 	public List<Carte> getCarti() throws Exception{
@@ -40,8 +54,27 @@ public class BibliotecaCtrl {
 	public List<Carte> getCartiOrdonateDinAnul(String an) throws Exception{
 		if(!Validator.isNumber(an))
 			throw new Exception("Nu e numar!");
-		return cr.getCartiOrdonateDinAnul(an);
+		List<Carte> lc = getCarti();
+		List<Carte> lca = new ArrayList<Carte>();
+		for(Carte c:lc){
+			if(c.getAnAparitie().equals(an) == false){
+				lca.add(c);
+			}
+		}
+
+		Collections.sort(lca,new Comparator<Carte>(){
+
+			@Override
+			public int compare(Carte a, Carte b) {
+				if(a.getAnAparitie().compareTo(b.getAnAparitie())==0){
+					return a.getTitlu().compareTo(b.getTitlu());
+				}
+
+				return a.getTitlu().compareTo(b.getTitlu());
+			}
+
+		});
+
+		return lca;
 	}
-	
-	
 }
