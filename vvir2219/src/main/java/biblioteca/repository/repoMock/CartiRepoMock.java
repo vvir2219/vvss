@@ -38,7 +38,7 @@ public class CartiRepoMock implements CartiRepoInterface {
 		int i=0;
 		while (i<carti.size()){
 			boolean flag = false;
-			List<String> lref = carti.get(i).getReferenti();
+			List<String> lref = carti.get(i).getAutori();
 			int j = 0;
 			while(j<lref.size()){
 				if(lref.get(j).toLowerCase().contains(ref.toLowerCase())){
@@ -87,7 +87,7 @@ public class CartiRepoMock implements CartiRepoInterface {
 			@Override
 			public int compare(Carte a, Carte b) {
 				if(a.getTitlu().compareTo(b.getTitlu())==0){
-					return a.getReferenti().get(0).compareTo(b.getReferenti().get(0));
+					return a.getAutori().get(0).compareTo(b.getAutori().get(0));
 				}
 				
 				return a.getTitlu().compareTo(b.getTitlu());

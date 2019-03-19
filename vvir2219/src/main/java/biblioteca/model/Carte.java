@@ -7,13 +7,14 @@ import java.util.List;
 public class Carte {
 	
 	private String titlu;
-	private List<String> referenti;
+	private List<String> autori;
 	private String anAparitie;
+	private String editura;
 	private List<String> cuvinteCheie;
 	
 	public Carte(){
 		titlu = "";
-		referenti = new ArrayList<String>();
+		autori = new ArrayList<String>();
 		anAparitie = "";
 		cuvinteCheie = new ArrayList<String>();
 	}
@@ -26,12 +27,12 @@ public class Carte {
 		this.titlu = titlu;
 	}
 
-	public List<String> getReferenti() {
-		return referenti;
+	public List<String> getAutori() {
+		return autori;
 	}
 
-	public void setReferenti(List<String> ref) {
-		this.referenti = ref;
+	public void setAutori(List<String> ref) {
+		this.autori = ref;
 	}
 
 	public String getAnAparitie() {
@@ -42,6 +43,14 @@ public class Carte {
 		this.anAparitie = anAparitie;
 	}
 
+	public String getEditura() {
+		return editura;
+	}
+
+	public void setEditura(String editura) {
+		this.editura = editura;
+	}
+
 	public List<String> getCuvinteCheie() {
 		return cuvinteCheie;
 	}
@@ -49,7 +58,6 @@ public class Carte {
 	public void setCuvinteCheie(List<String> cuvinteCheie) {
 		this.cuvinteCheie = cuvinteCheie;
 	}
-	
 
 	public void deleteCuvantCheie(String cuvant){
 			for(int i=0;i<cuvinteCheie.size();i++){
@@ -61,16 +69,16 @@ public class Carte {
 	}
 	
 	public void deleteReferent(String ref){
-			for(int i=0;i<referenti.size();i++){
-				if(referenti.get(i).equals(ref)){
-					referenti.remove(i);
+			for(int i = 0; i< autori.size(); i++){
+				if(autori.get(i).equals(ref)){
+					autori.remove(i);
 					return;
 				}
 			}
 	}
 	
 	public void deleteTotiReferentii(){
-		referenti.clear();
+		autori.clear();
 	}
 	
 	public void adaugaCuvantCheie(String cuvant){
@@ -78,7 +86,7 @@ public class Carte {
 	}
 	
 	public void adaugaReferent(String ref){
-		referenti.add(ref);
+		autori.add(ref);
 	}
 	
 	public boolean cautaDupaCuvinteCheie(List<String> cuvinte){
@@ -92,7 +100,7 @@ public class Carte {
 	}
 	 
 	public boolean cautaDupaAutor(String autor){
-		for(String a:referenti){
+		for(String a: autori){
 			if(a.contains(autor))
 				return true;
 		}
@@ -104,11 +112,11 @@ public class Carte {
 		String ref = "";
 		String cuvCheie = "";
 		
-		for(int i=0;i<referenti.size();i++){
-			if(i==referenti.size()-1)
-				ref+=referenti.get(i);
+		for(int i = 0; i< autori.size(); i++){
+			if(i== autori.size()-1)
+				ref+= autori.get(i);
 			else
-				ref+=referenti.get(i)+",";
+				ref+= autori.get(i)+",";
 		}
 		
 		for(int i=0;i<cuvinteCheie.size();i++){
@@ -118,7 +126,7 @@ public class Carte {
 				cuvCheie+=cuvinteCheie.get(i)+",";
 		}
 		
-		return titlu+";"+ref+";"+anAparitie+";"+cuvCheie;
+		return titlu+";"+ref+";"+anAparitie+";"+editura+";"+cuvCheie;
 	}
 	
 	public static Carte getCarteFromString(String carte){
@@ -128,6 +136,7 @@ public class Carte {
 		String []cuvCheie = atr[4].split(",");
 		
 		c.titlu=atr[0];
+		c.editura=atr[3];
 		for(String s:referenti){
 			c.adaugaReferent(s);
 		}

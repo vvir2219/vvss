@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CartiRepo implements CartiRepoInterface {
 	
-	private String file = "out/cartiBD.txt";
+	private String file = "cartiBD.dat";
 	
 	public CartiRepo(){
 		URL location = CartiRepo.class.getProtectionDomain().getCodeSource().getLocation();
@@ -74,7 +74,7 @@ public class CartiRepo implements CartiRepoInterface {
 		int i=0;
 		while (i<carti.size()){
 			boolean flag = false;
-			List<String> lref = carti.get(i).getReferenti();
+			List<String> lref = carti.get(i).getAutori();
 			int j = 0;
 			while(j<lref.size()){
 				if(lref.get(j).toLowerCase().contains(ref.toLowerCase())){

@@ -72,6 +72,9 @@ public class Consola {
 				line=console.readLine();
 			}while(!line.matches("1[0-9]+"));
 			c.setAnAparitie(line);
+
+			System.out.println("Editura: ");
+			c.setEditura(console.readLine());
 			
 			do{
 				System.out.println("Nr. de referent:");

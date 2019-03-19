@@ -16,12 +16,12 @@ public class Validator {
 		if(c.getCuvinteCheie().size() == 0){
 			throw new Exception("Lista cuvinte cheie vida!");
 		}
-		if(c.getReferenti().size() ==  0){
+		if(c.getAutori().size() ==  0){
 			throw new Exception("Lista autori vida!");
 		}
 		if(!isOKString(c.getTitlu()))
 			throw new Exception("Titlu invalid!");
-		for(String s:c.getReferenti()){
+		for(String s:c.getAutori()){
 			if(!isOKString(s))
 				throw new Exception("Autor invalid!");
 		}
