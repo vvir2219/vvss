@@ -2,14 +2,33 @@ package biblioteca.util;
 
 import biblioteca.model.Carte;
 
-public class Validator {
+import java.awt.event.KeyEvent;
 
-	// TODO dafuk is with this name, easily confused with isOKString
-	public static boolean isStringOK(String s) throws Exception{
-		boolean flag = s.matches("[a-zA-Z]+");
-		if(flag == false)
-			throw new Exception("String invalid");
-		return flag;
+public class Validator {
+	private static boolean isPrintableChar( char c ) {
+		Character.UnicodeBlock block = Character.UnicodeBlock.of( c );
+		return (!Character.isISOControl(c)) &&
+				c != KeyEvent.CHAR_UNDEFINED &&
+				block != null &&
+				block != Character.UnicodeBlock.SPECIALS;
+	}
+
+	public static void validateAutor(String autor) throws Exception {
+		String []lista_nume = autor.split("[ ]+");
+		if (lista_nume.length > 5)
+			throw new Exception("Autorul are prea multe nume!");
+		for (String nume : lista_nume) {
+			if (!nume.matches("[A-Z][a-z]*\\.?"))
+				throw new Exception("Numele autorului ii dubios!");
+		}
+	}
+
+	private static void validateString(String string) throws Exception {
+		if (string.length() == 0)
+			throw new Exception("String does not contain characters!");
+		for(Character c : string.toCharArray())
+			if(!isPrintableChar(c))
+				throw new Exception("String contains unprintable characters!");
 	}
 	
 	public static void validateCarte(Carte c)throws Exception{
@@ -19,43 +38,26 @@ public class Validator {
 		if(c.getAutori().size() ==  0){
 			throw new Exception("Lista autori vida!");
 		}
-		if(!isOKString(c.getTitlu()))
-			throw new Exception("Titlu invalid!");
-		for(String s:c.getAutori()){
-			if(!isOKString(s))
-				throw new Exception("Autor invalid!");
-		}
-		for(String s:c.getCuvinteCheie()){
-			if(!isOKString(s))
-				throw new Exception("Cuvant cheie invalid!");
-		}
-		if(!Validator.isNumber(c.getAnAparitie()))
-			throw new Exception("Editura invalid!"); // ps. misto an 00000000000
+
+		validateString(c.getTitlu());
+		validateString(c.getEditura());
+		for(String autor: c.getAutori())
+			validateAutor(autor);
+		for(String cuv_cheie:c.getCuvinteCheie())
+			validateString(cuv_cheie);
+
+		if(!Validator.isYearValid(c.getAnAparitie()))
+			throw new Exception("An aparitie invalid!");
 	}
 	
-	public static boolean isNumber(String s){
-		return s.matches("[0-9]+");
-	}
-
-	// TODO hai cumva sa uitam de atrocitatea ce ii implementarea la functia asta
-	// TODO nu de alta da vreau sa nu am cosmaruri la noapte
-	public static boolean isOKString(String s){
-		String []t = s.split(" ");
-		if(t.length==2){
-			boolean ok1 = t[0].matches("[a-zA-Z]+");
-			boolean ok2 = t[1].matches("[a-zA-Z]+");
-			if(ok1==ok2 && ok1==true){
-				return true;
-			}
+	public static boolean isYearValid(String s){
+		try {
+			Integer year = Integer.parseInt(s);
+			if (year < 0 || year >= 3000)
+				return false;
+			return true;
+		} catch (NumberFormatException ignored) {
 			return false;
 		}
-		return s.matches("[a-zA-Z]+");
-
-//		O implementare mai frumoasa
-//		if (s.contains(" "))
-//			return s.matches("[a-zA-Z]+ [a-zA-Z]+");
-//		else
-//			return s.matches("[a-zA-Z]+");
 	}
-	
 }

@@ -1,0 +1,98 @@
+Black-box testing
+
+| Student name    | Delivery date | Group |
+|-----------------+---------------+-------|
+| Vitca Vlad Ilie |               |   237 |
+
+[Unit BBT]
+Proiectati si implementati o aplicatie Java pentru rezolvarea problemei propuse. Se va evidentia o arhitectura stratificata. Informatiile vor fi preluate din fisiere text(fisierul "cartiBD.dat"), cate o carte pe linie, cu campurile separate prin ";" si valorile campurilor cu valori multiple separate prin ",". Informatiile vor fi preluate la fiecare deschidere a programului. Programul va avea interfata de tip consola.
+
+1. Evidenta cartilor dintr-o biblioteca
+
+Biblioteca judeteana doreste dezvoltarea unui program pentru gestiunea cartilor existente. Programul va avea urmatoarele functionalitati:
+F01. adaugarea unei noi carti (titlu : string, autori : list of strings, an aparitie : string, editura : string, cuvinte cheie : list of strings);
+
+F02. cautarea cartilor ce au un anumit autor (putand fi identificat si prin parti din numele autorului) printre autori;
+F03. afisarea cartilor din biblioteca care au aparut intr-un anumit an, ordonate alfabetic dupa titlu si autori.
+
+Constrangeri carte:
+	* titlu - doar caractere printabile
+	autori -  len > 0, fiecare autor are numele format din maxim 5 cuvinte, fiecare incepe cu litera mare si are posibilitatea sa se termine cu punct
+	* an_aparitie -  numar intreg intre 0 si 3000
+	editura - doar caractere printabile
+	cuvinte_cheie -  len > 0,  fiecare cuvant cheie va contine doar caractere printabile
+
+Voi testa metoda adaugaCarte cu semnatura adaugaCarte(titlu, autori, an_aparitie, editura, cuvinte_cheie)
+Parametrii: titlu, an_aparitie
+Conditii de intrare: titlu este string ce contine doar caractere printabile si nu are lungimea 0
+	    	     an_aparitie este string cu format de numar intreg si apartine intervalului [0..3000]
+
+Clase de echivalenta:
+
+| Nr ordine | Cond                                    | EC valid                                | EC invalid                            |
+|-----------+-----------------------------------------+-----------------------------------------+---------------------------------------|
+|         1 | titlu contine doar caractere printabile | titlu contine doar caractere printabile |                                       |
+|         2 | titlu contine doar caractere printabile |                                         | titlu continte caractere neprintabile |
+|         3 | an_aparitie e [0..3000]                 | an_aparitie e [0..3000]                 |                                       |
+|         4 | an_aparitie e [0..3000]                 |                                         | an_aparitie < 0                       |
+|         5 | an_aparitie e [0..3000]                 |                                         | an_aparitie > 3000                    |
+|         6 | an_aparitie are forma de numar          | an_aparitie are forma de numar          |                                       |
+|         7 | an_aparitie are forma de numar          |                                         | an_aparitie nu are forma de numar     |
+|         8 | titlu are lungime                       | len(titlu) > 0                          |                                       |
+|         9 | titlu are lungime                       |                                         | len(titlu) == 0                       |
+|        10 | titlu are lungime                       |                                         | len(titlu) < 0                        |
+
+Cazuri de testare pentru EC:
+
+| Nr ordine | EC         | input                               | expected output |
+|-----------+------------+-------------------------------------+-----------------|
+|         1 | 1, 8, 3, 6 | titlu="a" an_aparitie="1984"        | Carte adaugata  |
+|         2 | 2, 8, 3, 6 | titlu="\u0003" an_aparitie="1984"   | Arunca exceptie |
+|         3 | 9, 3, 6    | titlu=""       an_aparitie="1984"   | Arunca exceptie |
+|         4 | 10         | nu se poate                         | nu se poate     |
+|         5 | 1, 8, 6, 4 | titlu="Un titlu" an_aparitie="-1"   | Arunca exceptie |
+|         6 | 1, 8, 6, 5 | titlu="Un titlu" an_aparitie="3001" | Arunca exceptie |
+|         7 | 1, 8, 7    | titlu="Un titlu" an_aparitie="ana"  | Arunca exceptie |
+
+BVA:
+
+| Nr ordine | Conditie                                 | Conditie BVA            |
+|-----------+------------------------------------------+-------------------------|
+|         1 | lungimea titlului e nenula               | titlu=? length=-1       |
+|         2 | lungimea titlului e nenula               | titlu="" length=0       |
+|         3 | lungimea titlului e nenula               | titlu="a" length=1      |
+|         4 | titlul contine doar caractere printabile | titlu="\u0003" length=1 |
+|         5 | titlul contine doar caractere printabile | titlu="a" length=1      |
+|         6 | an aparitie are format de numar          | an_aparitie="1984"      |
+|         7 | an aparitie are format de numar          | an_aparitie="ana"       |
+|         8 | an aparitie e [0..3000]                  | an_aparitie="1984"      |
+|         9 | an aparitie e [0..3000]                  | an_aparitie="-1"        |
+|        10 | an aparitie e [0..3000]                  | an_aparitie="3001"      |
+
+Cazuri de testare BVA:
+
+| Nr ordine | Conditie BVA | input | expected output |
+|-----------+--------------+-------+-----------------|
+|         8 |            1 | ->TC4 |                 |
+|         9 |            2 | ->TC3 |                 |
+|        10 |            3 | ->TC1 |                 |
+|        11 |            4 | ->TC2 |                 |
+|        12 |            5 | ->TC1 |                 |
+|        13 |            6 | ->TC1 |                 |
+|        14 |            7 | ->TC7 |                 |
+|        15 |            8 | ->TC1 |                 |
+|        16 |            9 | ->TC5 |                 |
+|        17 |           10 | ->TC6 |                 |
+
+BBT_TC Final:
+
+| Nr ordine | ECP_TC |         BVA_TC | input                               | expected output |
+|-----------+--------+----------------+-------------------------------------+-----------------|
+|         1 |      1 | 10, 12, 13, 15 | titlu="a" an_aparitie="1984"        | Carte adaugata  |
+|         2 |      2 |             11 | titlu="\u0003" an_aparitie="1984"   | Arunca exceptie |
+|         3 |      3 |              9 | titlu=""       an_aparitie="1984"   | Arunca exceptie |
+|         4 |      4 |              8 | nu se poate                         | nu se poate     |
+|         5 |      5 |             16 | titlu="Un titlu" an_aparitie="-1"   | Arunca exceptie |
+|         6 |      6 |             17 | titlu="Un titlu" an_aparitie="3001" | Arunca exceptie |
+|         7 |      7 |             14 | titlu="Un titlu" an_aparitie="ana"  | Arunca exceptie |
+

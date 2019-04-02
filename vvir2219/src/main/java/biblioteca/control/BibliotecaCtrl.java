@@ -18,13 +18,13 @@ public class BibliotecaCtrl {
 		this.cr = cr;
 	}
 	
-	public void adaugaCarte(Carte c) throws Exception{
+	public void adaugaCarte(Carte c) throws Exception {
 		Validator.validateCarte(c);
 		cr.adaugaCarte(c);
 	}
 
 	public List<Carte> cautaCarte(String autor) throws Exception{
-		Validator.isStringOK(autor);
+		Validator.validateAutor(autor);
 		List<Carte> carti = cr.getCarti();
 		List<Carte> cartiGasite = new ArrayList<Carte>();
 		int i=0;
@@ -52,8 +52,8 @@ public class BibliotecaCtrl {
 	}
 	
 	public List<Carte> getCartiOrdonateDinAnul(String an) throws Exception{
-		if(!Validator.isNumber(an))
-			throw new Exception("Nu e numar!");
+		if(!Validator.isYearValid(an))
+			throw new Exception("Anul nu e valid!");
 		List<Carte> lc = getCarti();
 		List<Carte> lca = new ArrayList<Carte>();
 		for(Carte c:lc){
