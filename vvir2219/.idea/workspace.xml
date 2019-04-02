@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c5fabb2-d418-4707-ac78-91c9201dde60" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/biblioteca/control/BibliotecaCtrlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../1-ProiectBiblioteca/DocsBiblioteca/RequirementsBiblioteca_v1.0.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../1-ProiectBiblioteca/DocsBiblioteca/RequirementsBiblioteca_v1.0.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../checklists/.~lock.Lab01_ReviewReport.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ECP" beforeDir="false" afterPath="$PROJECT_DIR$/../ECP" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/biblioteca/control/BibliotecaCtrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/biblioteca/control/BibliotecaCtrl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/biblioteca/util/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/biblioteca/util/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/biblioteca/control/BibliotecaCtrlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/biblioteca/control/BibliotecaCtrlTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/util/Validator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="325">
+              <caret line="55" column="34" lean-forward="true" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
               <folding>
                 <element signature="method#isPrintableChar#0;class#Validator#0" />
                 <element signature="method#validateAutor#0;class#Validator#0" />
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/vvir2219MV/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -45,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/control/BibliotecaCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="187">
+              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding>
                 <element signature="n#!!block;n#BibliotecaCtrl#0;n#BibliotecaCtrl#0" />
                 <element signature="method#getCarti#0;class#BibliotecaCtrl#0" />
@@ -58,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/biblioteca/control/BibliotecaCtrlTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+            <state relative-caret-position="-899">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -67,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/begin/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="1071">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -118,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/repository/repoMock/CartiRepoMock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="18" column="122" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="122" />
+              <caret line="18" column="122" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="122" />
             </state>
           </provider>
         </entry>
@@ -153,8 +151,8 @@
         <option value="$PROJECT_DIR$/src/main/java/biblioteca/repository/repo/CartiRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/biblioteca/repository/repoMock/CartiRepoMock.java" />
         <option value="$PROJECT_DIR$/src/main/java/biblioteca/control/BibliotecaCtrl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/biblioteca/util/Validator.java" />
         <option value="$PROJECT_DIR$/src/test/java/biblioteca/control/BibliotecaCtrlTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/biblioteca/util/Validator.java" />
       </list>
     </option>
   </component>
@@ -176,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -327,13 +324,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554191431895" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554219333488" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -446,7 +444,8 @@
       <workItem from="1552366224741" duration="3784000" />
       <workItem from="1553014262357" duration="3265000" />
       <workItem from="1554144906334" duration="5898000" />
-      <workItem from="1554188118490" duration="1724000" />
+      <workItem from="1554188118490" duration="2968000" />
+      <workItem from="1554218234720" duration="762000" />
     </task>
     <servers />
   </component>
@@ -466,9 +465,18 @@
     <history-entry file="BibliotecaCtrlTest_TC3_titluEVid - 2019.04.02 at 10h 47m 24s.xml">
       <configuration name="BibliotecaCtrlTest.TC3_titluEVid" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BibliotecaCtrlTest - 2019.04.02 at 10h 50m 36s.xml">
+      <configuration name="BibliotecaCtrlTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaCtrlTest - 2019.04.02 at 18h 34m 54s.xml">
+      <configuration name="BibliotecaCtrlTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BibliotecaCtrlTest - 2019.04.02 at 18h 35m 24s.xml">
+      <configuration name="BibliotecaCtrlTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22886000" />
+    <option name="totallyTimeSpent" value="24892000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -483,7 +491,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -505,7 +513,7 @@
       <window_info anchor="bottom" id="Messages" order="12" weight="0.299509" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
@@ -748,6 +756,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/control/BibliotecaCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#BibliotecaCtrl#0;n#BibliotecaCtrl#0" />
+            <element signature="method#getCarti#0;class#BibliotecaCtrl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/begin/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/view/UIConsola.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -783,21 +809,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/control/BibliotecaCtrl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/repository/repoMock/CartiRepoMock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#BibliotecaCtrl#0;n#BibliotecaCtrl#0" />
-            <element signature="method#getCarti#0;class#BibliotecaCtrl#0" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="18" column="122" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="122" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/util/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+        <state relative-caret-position="325">
+          <caret line="55" column="34" lean-forward="true" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
           <folding>
             <element signature="method#isPrintableChar#0;class#Validator#0" />
             <element signature="method#validateAutor#0;class#Validator#0" />
@@ -806,31 +828,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/repository/repoMock/CartiRepoMock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="122" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/vvir2219MV/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/biblioteca/begin/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/biblioteca/control/BibliotecaCtrlTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        <state relative-caret-position="-899">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>

@@ -65,34 +65,43 @@ BVA:
 |         5 | titlul contine doar caractere printabile | titlu="a" length=1      |
 |         6 | an aparitie are format de numar          | an_aparitie="1984"      |
 |         7 | an aparitie are format de numar          | an_aparitie="ana"       |
-|         8 | an aparitie e [0..3000]                  | an_aparitie="1984"      |
-|         9 | an aparitie e [0..3000]                  | an_aparitie="-1"        |
-|        10 | an aparitie e [0..3000]                  | an_aparitie="3001"      |
+|         8 | an aparitie e [0..3000]                  | an_aparitie="-1"        |
+|         9 | an aparitie e [0..3000]                  | an_aparitie="0"         |
+|        10 | an aparitie e [0..3000]                  | an_aparitie="1"         |
+|        11 | an aparitie e [0..3000]                  | an_aparitie="2999"      |
+|        12 | an aparitie e [0..3000]                  | an_aparitie="3000"      |
+|        13 | an aparitie e [0..3000]                  | an_aparitie="3001"      |
 
 Cazuri de testare BVA:
 
-| Nr ordine | Conditie BVA | input | expected output |
-|-----------+--------------+-------+-----------------|
-|         8 |            1 | ->TC4 |                 |
-|         9 |            2 | ->TC3 |                 |
-|        10 |            3 | ->TC1 |                 |
-|        11 |            4 | ->TC2 |                 |
-|        12 |            5 | ->TC1 |                 |
-|        13 |            6 | ->TC1 |                 |
-|        14 |            7 | ->TC7 |                 |
-|        15 |            8 | ->TC1 |                 |
-|        16 |            9 | ->TC5 |                 |
-|        17 |           10 | ->TC6 |                 |
+| Nr ordine | Conditie BVA | input                        | expected output |
+|-----------+--------------+------------------------------+-----------------|
+|         8 |            1 | ->TC4                        |                 |
+|         9 |            2 | ->TC3                        |                 |
+|        10 |            3 | ->TC1                        |                 |
+|        11 |            4 | ->TC2                        |                 |
+|        12 |            5 | ->TC1                        |                 |
+|        13 |            6 | ->TC1                        |                 |
+|        14 |            7 | ->TC7                        |                 |
+|        15 |            8 | ->TC5                        |                 |
+|        16 |            9 | titlu="a" an_aparitie="0"    | Carte adaugata  |
+|        17 |           10 | titlu="a" an_aparitie="1"    | Carte adaugata  |
+|        18 |           11 | titlu="a" an_aparitie="2999" | Carte adaugata  |
+|        19 |           12 | titlu="a" an_aparitie="3000" | Carte adaugata  |
+|        20 |           13 | ->TC6                        |                 |
 
 BBT_TC Final:
 
-| Nr ordine | ECP_TC |         BVA_TC | input                               | expected output |
-|-----------+--------+----------------+-------------------------------------+-----------------|
-|         1 |      1 | 10, 12, 13, 15 | titlu="a" an_aparitie="1984"        | Carte adaugata  |
-|         2 |      2 |             11 | titlu="\u0003" an_aparitie="1984"   | Arunca exceptie |
-|         3 |      3 |              9 | titlu=""       an_aparitie="1984"   | Arunca exceptie |
-|         4 |      4 |              8 | nu se poate                         | nu se poate     |
-|         5 |      5 |             16 | titlu="Un titlu" an_aparitie="-1"   | Arunca exceptie |
-|         6 |      6 |             17 | titlu="Un titlu" an_aparitie="3001" | Arunca exceptie |
-|         7 |      7 |             14 | titlu="Un titlu" an_aparitie="ana"  | Arunca exceptie |
-
+| Nr ordine | ECP_TC |     BVA_TC | input                             | expected output | actual output   |
+|-----------+--------+------------+-----------------------------------+-----------------+-----------------|
+|         1 |      1 | 10, 12, 13 | titlu="a" an_aparitie="1984"      | Carte adaugata  | Carte adaugata  |
+|         2 |      2 |         11 | titlu="\u0003" an_aparitie="1984" | Arunca exceptie | Arunca exceptie |
+|         3 |      3 |          9 | titlu=""       an_aparitie="1984" | Arunca exceptie | Arunca exceptie |
+|         4 |      4 |          8 | nu se poate                       | nu se poate     | nu se poate     |
+|         5 |      5 |         15 | titlu="a" an_aparitie="-1"        | Arunca exceptie | Arunca exceptie |
+|         6 |      6 |         20 | titlu="a" an_aparitie="3001"      | Arunca exceptie | Arunca exceptie |
+|         7 |      7 |         14 | titlu="a" an_aparitie="ana"       | Arunca exceptie | Arunca exceptie |
+|         8 |      - |         16 | titlu="a" an_aparitie="0"         | Carte adaugata  | Carte adaugata  |
+|         9 |      - |         17 | titlu="a" an_aparitie="1"         | Carte adaugata  | Carte adaugata  |
+|        10 |      - |         18 | titlu="a" an_aparitie="2999"      | Carte adaugata  | Carte adaugata  |
+|        11 |      - |         19 | titlu="a" an_aparitie="3000"      | Carte adaugata  | Carte adaugata  |

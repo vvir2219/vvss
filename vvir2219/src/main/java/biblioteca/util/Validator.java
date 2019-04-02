@@ -53,7 +53,7 @@ public class Validator {
 	public static boolean isYearValid(String s){
 		try {
 			Integer year = Integer.parseInt(s);
-			if (year < 0 || year >= 3000)
+			if (year < 0 || year > 3000)
 				return false;
 			return true;
 		} catch (NumberFormatException ignored) {
