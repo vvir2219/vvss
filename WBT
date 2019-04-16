@@ -1,0 +1,46 @@
+0 public List<Carte> cautaCarte(String autor) throws Exception{
+1 		Validator.validateAutor(autor);
+		List<Carte> carti = cr.getCarti();
+		List<Carte> cartiGasite = new ArrayList<Carte>();
+		int i=0;
+2		while (i<carti.size()){
+3			boolean flag = false;
+			List<String> lref = carti.get(i).getAutori();
+			int j = 0;
+4			while(j<lref.size()){
+5				if(lref.get(j).toLowerCase().contains(autor.toLowerCase())){
+6					flag = true;
+					break;
+				}
+7				j++;
+			}
+8			if(flag == true){
+9				cartiGasite.add(carti.get(i));
+			}
+10			i++;
+		}
+11		return cartiGasite;
+	}
+
+CC = numarul ciclomatic = 5
+
+<CFG.jpg>
+
+drumuri independente:
+
+| Nr. drum | Drum                          | 2 | 4 | 5 | 8 |           |
+|----------+-------------------------------+---+---+---+---+-----------|
+|        1 | 1 2t 3 4t 5t 6 8t 9 10 2f 11  | t | t | t | t |           |
+|        2 | 1 2t 3 4t 5t 6 8f 10 2f 11    | t | t | t | f | imposibil |
+|        3 | 1 2t 3 4t 5f 7 4f 8f 10 2f 11 | t | t | f | f |           |
+|        4 | 1 2t 3 4f 8f 10 2f 11         | t | f | - | f |           |
+|        5 | 1 2f 11                       | f | - | - | - |           |
+
+
+| Test number | Input                                           | Output                  | Statements covered    | i < carti.size() | T | F | j < lref.size() | T | F | lref.get(j).toLowerCase().contains(autor.toLowerCase()) | T | F | flag == true | T | F | loop repetitions | while1 | while2 | Path coverage |
+|-------------+-------------------------------------------------+-------------------------+-----------------------+------------------+---+---+-----------------+---+---+---------------------------------------------------------+---+---+--------------+---+---+------------------+--------+--------+---------------|
+|           1 | len(Carti) == 0                                 | []                      | 1,2,11                |                  |   | X |                 |   | X |                                                         |   | X |              |   | X |                  |      0 |      0 |             5 |
+|           2 | Carti = [{autors=[], ...}], autor="Ana"         | []                      | 1,2,3,4,8,10,11       |                  | X | X |                 |   | X |                                                         |   | X |              |   | X |                  |      1 |      0 |             4 |
+|           3 | Carti = [{autors=["a", "b"], ...}], autor="Ana" | []                      | 1,2,3,4,5,7,8,10,11   |                  | X | X |                 | X | X |                                                         |   | X |              |   | X |                  |      1 |      2 |             3 |
+|           4 | Carti = [{autors=["Ana"], ...}], autor="Ana"    | [{autors=["ana"], ...}] | 1,2,3,4,5,6,8,9,10,11 |                  | X | X |                 | X | X |                                                         | X |   |              | X |   |                  |      1 |      1 |             1 |
+|             |                                                 |                         |                       |                  |   |   |                 |   |   |                                                         |   |   |              |   |   |                  |        |        |               |

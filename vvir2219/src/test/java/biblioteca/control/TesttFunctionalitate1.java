@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class BibliotecaCtrlTest {
+public class TesttFunctionalitate1 {
 
     // @before se ruleaza inainte de fi
     // ecare test si @after dupa
