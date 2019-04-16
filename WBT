@@ -23,6 +23,8 @@
 	}
 
 CC = numarul ciclomatic = 5
+   = numarul de regiuni = 5
+   = numarul de noduri de decizie + 1 = 5
 
 <CFG.jpg>
 
@@ -44,3 +46,7 @@ drumuri independente:
 |           3 | Carti = [{autors=["a", "b"], ...}], autor="Ana" | []                      | 1,2,3,4,5,7,8,10,11   |                  | X | X |                 | X | X |                                                         |   | X |              |   | X |                  |      1 |      2 |             3 |
 |           4 | Carti = [{autors=["Ana"], ...}], autor="Ana"    | [{autors=["ana"], ...}] | 1,2,3,4,5,6,8,9,10,11 |                  | X | X |                 | X | X |                                                         | X |   |              | X |   |                  |      1 |      1 |             1 |
 |             |                                                 |                         |                       |                  |   |   |                 |   |   |                                                         |   |   |              |   |   |                  |        |        |               |
+
+| TC #run | #TC passed | #TC failed | Coverage | #Bugs | #Bugs fixed | Re-testing |
+|---------+------------+------------+----------+-------+-------------+------------|
+|       4 |          4 |          0 |     100% |     0 |           0 | no         |
