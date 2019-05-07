@@ -57,7 +57,7 @@ public class BibliotecaCtrl {
 		List<Carte> lc = getCarti();
 		List<Carte> lca = new ArrayList<Carte>();
 		for(Carte c:lc){
-			if(c.getAnAparitie().equals(an) == false){
+			if(c.getAnAparitie().equals(an)){
 				lca.add(c);
 			}
 		}

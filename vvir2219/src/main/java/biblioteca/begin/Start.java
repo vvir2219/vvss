@@ -3,7 +3,9 @@ package biblioteca.begin;
 import biblioteca.control.BibliotecaCtrl;
 import biblioteca.repository.repo.CartiRepo;
 import biblioteca.repository.repoInterfaces.CartiRepoInterface;
+import biblioteca.view.IConsola;
 import biblioteca.view.UIConsola;
+import biblioteca.view.UIConsolaFake;
 
 import java.io.IOException;
 
@@ -19,7 +21,7 @@ public class Start {
 	public static void main(String[] args) {
 		CartiRepoInterface cr = new CartiRepo();//new CartiRepoMock();
 		BibliotecaCtrl bc = new BibliotecaCtrl(cr);
-		UIConsola c = new UIConsola(bc);
+		IConsola c = new UIConsolaFake(bc);
 		try {
 			c.executa();
 		} catch (IOException e) {

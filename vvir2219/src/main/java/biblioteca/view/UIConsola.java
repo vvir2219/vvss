@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class UIConsola {
+public class UIConsola implements IConsola{
 
 	private BufferedReader console;
 	BibliotecaCtrl bc;
