@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Search category story","Searching inexisting category should display message","SUCCESS","2019-05-21T01:06:50.4514125+03:00[Europe/Bucharest]","0.0","11.57"
+"Search category story","Searching existing category should display tree","SUCCESS","2019-05-21T01:07:02.0430964+03:00[Europe/Bucharest]","0.0","2.43"

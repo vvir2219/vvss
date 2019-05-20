@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login story","Login with invalid data shouldnt work","SUCCESS","2019-05-21T01:06:07.4055195+03:00[Europe/Bucharest]","0.0","13.86"
+"Login story","Login with valid data should go through","SUCCESS","2019-05-21T01:06:21.3669149+03:00[Europe/Bucharest]","0.0","4.77"
+"Search by keyword story","Searching by unexisting word should not find page","SUCCESS","2019-05-21T01:06:29.308831+03:00[Europe/Bucharest]","0.0","10.75"
+"Search by keyword story","Searching by keyword banana should display the corresponding article","SUCCESS","2019-05-21T01:06:40.1699539+03:00[Europe/Bucharest]","0.0","3.7"
+"Search by keyword story","Searching by keyword apple should display the corresponding article","SUCCESS","2019-05-21T01:06:43.9076566+03:00[Europe/Bucharest]","0.0","4.36"
+"Search category story","Searching inexisting category should display message","SUCCESS","2019-05-21T01:06:50.4514125+03:00[Europe/Bucharest]","0.0","11.57"
+"Search category story","Searching existing category should display tree","SUCCESS","2019-05-21T01:07:02.0430964+03:00[Europe/Bucharest]","0.0","2.43"

@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login story","Login with invalid data shouldnt work","SUCCESS","2019-05-21T01:06:07.4055195+03:00[Europe/Bucharest]","0.0","13.86"
+"Login story","Login with valid data should go through","SUCCESS","2019-05-21T01:06:21.3669149+03:00[Europe/Bucharest]","0.0","4.77"

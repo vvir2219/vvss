@@ -1,0 +1,8 @@
+Serenity\features\search\SearchByKeywordStory.class
+Serenity\features\search\SearchCategoryStory.class
+Serenity\pages\LoginPage.class
+Serenity\features\search\package-info.class
+Serenity\pages\DictionaryPage.class
+Serenity\pages\CategoryTreePage.class
+Serenity\features\search\LoginStory.class
+Serenity\steps\serenity\EndUserSteps.class
